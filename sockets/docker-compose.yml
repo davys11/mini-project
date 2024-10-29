@@ -1,0 +1,15 @@
+services:
+  server:
+    build:
+      dockerfile: Dockerfile
+    command: php -v
+    volumes:
+      - .:/app
+    depends_on:
+      - client
+  client:
+    build:
+      dockerfile: Dockerfile
+    command: php -v
+    volumes:
+      - .:/app
